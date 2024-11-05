@@ -19,7 +19,7 @@ jobs:
     - name: Create 365 empty commits
       run: |
         start_date="1995-01-01"
-        for i in $(seq 0 8000); do
+        for i in $(seq 0 15000); do
           current_date=$(date -d "$start_date + $i days" +"%Y-%m-%dT12:00:00")
           GIT_COMMITTER_DATE="$current_date" git commit --allow-empty -m "Empty commit $current_date" --date "$current_date"
         done
